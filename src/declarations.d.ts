@@ -41,3 +41,11 @@ declare module "*.svg" {
 declare module "@kage/ui-kit" {
   export const Button;
 }
+
+declare module "@kage/store" {
+  const store: any;
+  const actions: any;
+  export {
+    store, actions
+  }
+}

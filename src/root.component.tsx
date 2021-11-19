@@ -1,6 +1,8 @@
-import { Button } from "@kage/ui-kit";
-import { StyledNavbar } from "./styles/Navbar.styles";
+import { store } from "@kage/store";
 import { Link } from "@reach/router";
+import { Provider } from "react-redux";
+import { AddNewProductButton } from "./components/AddNewProductButton/AddNewProductButton.component";
+import { StyledNavbar } from "./styles/Navbar.styles";
 
 const links = [
   {
@@ -15,19 +17,21 @@ const links = [
 
 export default function Root(props) {
   return (
-    <StyledNavbar>
-      <nav>
-        <ul>
-          {links.map((link) => {
-            return (
-              <li key={link.link}>
-                <Link to={link.link}>{link.name}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-      <Button>Login</Button>
-    </StyledNavbar>
+    <Provider store={store}>
+      <StyledNavbar>
+        <nav>
+          <ul>
+            {links.map((link) => {
+              return (
+                <li key={link.link}>
+                  <Link to={link.link}>{link.name}</Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+        <AddNewProductButton />
+      </StyledNavbar>
+    </Provider>
   );
 }
