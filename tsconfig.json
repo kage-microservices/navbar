@@ -4,7 +4,7 @@
     "jsx": "react-jsx",
     "declarationDir": "dist",
     "paths": {
-      "@kage/ui-kit": ["@kage/ui-kit/src/kage-ui-kit"],
+      "@kage/ui-kit": ["@kage/ui-kit/src/kage-ui-kit"]
     }
   },
   "files": ["src/kage-navbar.tsx"],
